@@ -35,12 +35,12 @@
       <div class="col-md-6">
         <label for="idInput">Enter IDs (optcgsim format)</label>
         <textarea id="idInput" class="form-control" rows="30" placeholder="4xST04-002&#10;4xST04-012&#10;2xOP01-103"></textarea>
-        <button class="btn btn-primary mt-2" onclick="convert()">Convert</button>
       </div>
       <div class="col-md-6">
-        <label>Deck Registration List</label>
+        <button class="btn btn-primary mt-2" onclick="convert()">Convert</button>
+        <button class="btn btn-primary mt-2" id="printBtn" hidden>Print Table</button>               
+        <h2>Deck Registration List</h2>
         <div id="table-container"></div>
-        <button class="btn btn-primary mt-2" id="printBtn">Print Table</button>
       </div>
     </div>
   </div>
@@ -71,7 +71,7 @@ function convert() {
 
       idsWithCounts.forEach(entry => {
         const [count, idRaw] = entry.split('x');
-        const id = idRaw.trim();
+        const id = idRaw.trim().toUpperCase();
         const name = idToName[id] || "Not Found";
         const type = idToType[id] || "-";
 
@@ -81,7 +81,7 @@ function convert() {
           mainTable.push([count.trim(), id, type, name]);
         }
       });
-
+      document.getElementById("printBtn").removeAttribute("hidden");
       renderTables(container, mainTable, leaderTable);
     })
     .catch(error => console.error('Error:', error));
