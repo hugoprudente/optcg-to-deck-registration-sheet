@@ -135,7 +135,7 @@ function convertToGumGumLink(input) {
     const cleaned = input
         .trim()
         .split('\n')
-        .map(line => line.trim())
+        .map(line => line.trim().toUpperCase())
         .filter(Boolean)
         .join(';');
 
