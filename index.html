@@ -9,6 +9,18 @@
     .align-top {
         align-items: flex-start;
     }
+    table {
+            width: 100%;
+            border-collapse: collapse;
+            }
+            th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: center;
+            }
+            th {
+            background-color: #f2f2f2;
+            }    
 </style>
 </head>
 <body>
@@ -20,31 +32,13 @@
         </div>
         <div class="col-md-6">
             <label for="idInput">Enter IDs (optcgsim format)</label>
-            <textarea id="idInput" class="form-control" rows="30" placeholder="4xST04-002&#10;4xST04-012&#10;2xOP01-103&#10;2xST10-010&#10;4xOP02-085">1xOP05-060
-                4xOP09-069
-                3xEB02-036
-                4xST18-001
-                2xOP05-061
-                2xEB01-061
-                4xOP06-076
-                4xST18-004
-                2xOP05-070
-                1xOP05-066
-                2xOP05-074
-                4xST18-003
-                2xOP07-064
-                2xOP09-065
-                4xST18-005
-                3xOP08-069
-                2xOP09-119
-                4xOP09-078
-                1xOP05-077</textarea>
+            <textarea id="idInput" class="form-control" rows="30" placeholder="4xST04-002&#10;4xST04-012&#10;2xOP01-103&#10;2xST10-010&#10;4xOP02-085"></textarea>
             <button class="btn btn-primary mt-2" onclick="convert()">Convert</button>
         </div>
         <div class="col-md-6">
             <label for="idInput">Deck Registration List</label>
             <div id="table-container"></div>
-            <button id="printBtn">Print Table</button>
+            <button class="btn btn-primary mt-2" id="printBtn">Print Table</button>
         </div>
     </div>
 </div>
@@ -67,7 +61,6 @@ function convert() {
                 if (columns.length > 2) {
                     const id = columns[0].trim();
                     const name = columns[1].trim();
-                    console.log(columns)
                     const cardType = columns[3].trim();
                     idToName[id] = name;
                     idToType[id] = cardType;
@@ -100,11 +93,12 @@ function convert() {
 }
 
 function generateTable(containerId, tableData, tableLeaderData) {
+    const playerName = document.getElementById("nameInput").value.trim();
     const container = document.getElementById(containerId);
     const table = document.createElement("table");
     const leaderTable = document.createElement("table")
-    const playerName = document.createElement("label")
-    playerName.text = "Player: " + document.getElementById("nameInput").value.trim();
+    const playerLabel = document.createElement("label")
+    playerLabel.textContent  = `Player: ${playerName || "Unknown"}`;
 
     leaderTable.setAttribute("id", "table-leader");
     table.setAttribute("id", "table-deck")
@@ -128,8 +122,8 @@ function generateTable(containerId, tableData, tableLeaderData) {
     });
 
     const newLine = document.createElement("br")
-
-    container.appendChild(leaderTable)
+    container.appendChild(playerLabel);
+    container.appendChild(leaderTable);
     container.appendChild(newLine);
     container.appendChild(table);
 }
