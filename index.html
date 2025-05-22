@@ -38,7 +38,8 @@
       </div>
       <div class="col-md-6">
         <button class="btn btn-primary mt-2" onclick="convert()">Convert</button>
-        <button class="btn btn-primary mt-2" id="printBtn" hidden>Print Table</button>               
+        <button class="btn btn-primary mt-2" id="printBtn" hidden>Print Table</button>
+        <a id="deckStatLink" class="btn btn-primary mt-2" target="_blank" hidden>Deck Stat by Gumgum.gg</a>
         <h2>Deck Registration List</h2>
         <div id="table-container"></div>
       </div>
@@ -66,7 +67,7 @@ function convert() {
         }
       });
 
-      const mainTable = [["QTY", "Card ID", "Card Type", "Card Name"]];
+      let mainTable = [["QTY", "Card ID", "Card Type", "Card Name"]];
       const leaderTable = [["Card ID", "Card Name"]];
 
       idsWithCounts.forEach(entry => {
@@ -82,7 +83,18 @@ function convert() {
         }
       });
       document.getElementById("printBtn").removeAttribute("hidden");
+      document.getElementById("deckStatLink").removeAttribute("hidden");
+      mainTable = [
+        mainTable[0],
+        ...mainTable.slice(1).sort((a, b) => {
+          const [ , , typeA, nameA ] = a;
+          const [ , , typeB, nameB ] = b;
+          const typeCompare = typeA.localeCompare(typeB);
+          return typeCompare !== 0 ? typeCompare : nameA.localeCompare(nameB);
+        })
+      ];      
       renderTables(container, mainTable, leaderTable);
+      convertToGumGumLink(idInput)
     })
     .catch(error => console.error('Error:', error));
 }
@@ -104,13 +116,31 @@ function createTable(id, data) {
   table.id = id;
   data.forEach((rowData, i) => {
     const row = table.insertRow();
-    rowData.forEach(cellData => {
-      const cell = document.createElement(i === 0 ? "th" : "td");
-      cell.textContent = cellData;
-      row.appendChild(cell);
-    });
+    rowData.forEach((cellData, colIndex) => {
+    const cell = i === 0 ? document.createElement("th") : document.createElement("td");
+    cell.textContent = cellData;
+
+    // Left-align the "Card Name" column (index 3 in mainTable)
+    if (colIndex === 3 && i !== 0) {
+        cell.style.textAlign = "left";
+    }
+
+    row.appendChild(cell);
+});
   });
   return table;
+}
+
+function convertToGumGumLink(input) {
+    const cleaned = input
+        .trim()
+        .split('\n')
+        .map(line => line.trim())
+        .filter(Boolean)
+        .join(';');
+
+    deckstat = document.getElementById("deckStatLink");
+    deckstat.setAttribute("href",`https://gumgum.gg/deckbuilder?deck=${cleaned}`);
 }
 
 function printTable() {
