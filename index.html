@@ -1,186 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>One Piece TCG Deck Registration</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>One Piece TCG Deck Registration</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <style>
     .align-top {
-        align-items: flex-start;
+      align-items: flex-start;
     }
     table {
-            width: 100%;
-            border-collapse: collapse;
-            }
-            th, td {
-            border: 1px solid #333;
-            padding: 8px;
-            text-align: center;
-            }
-            th {
-            background-color: #f2f2f2;
-            }    
-</style>
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
+  <div class="container">
     <h1 class="mt-4">One Piece TCG Deck Registration</h1>
     <div class="row mt-4 align-top">
-        <div class="col-md-12">
-            <label for="nameInput">Player: </label><input id="nameInput" placeholder="Echiiro Oda"></input>
-        </div>
-        <div class="col-md-6">
-            <label for="idInput">Enter IDs (optcgsim format)</label>
-            <textarea id="idInput" class="form-control" rows="30" placeholder="4xST04-002&#10;4xST04-012&#10;2xOP01-103&#10;2xST10-010&#10;4xOP02-085"></textarea>
-            <button class="btn btn-primary mt-2" onclick="convert()">Convert</button>
-        </div>
-        <div class="col-md-6">
-            <label for="idInput">Deck Registration List</label>
-            <div id="table-container"></div>
-            <button class="btn btn-primary mt-2" id="printBtn">Print Table</button>
-        </div>
+      <div class="col-md-12 mb-3">
+        <label for="nameInput"><strong>Player:</strong></label>
+        <input id="nameInput" class="form-control d-inline-block w-auto ml-2" placeholder="Eiichiro Oda" />
+      </div>
+      <div class="col-md-6">
+        <label for="idInput">Enter IDs (optcgsim format)</label>
+        <textarea id="idInput" class="form-control" rows="30" placeholder="4xST04-002&#10;4xST04-012&#10;2xOP01-103"></textarea>
+        <button class="btn btn-primary mt-2" onclick="convert()">Convert</button>
+      </div>
+      <div class="col-md-6">
+        <label>Deck Registration List</label>
+        <div id="table-container"></div>
+        <button class="btn btn-primary mt-2" id="printBtn">Print Table</button>
+      </div>
     </div>
-</div>
+  </div>
 
 <script>
 function convert() {
-    document.getElementById("table-container").innerHTML = "";
+  const container = document.getElementById("table-container");
+  container.innerHTML = "";
 
-    const idInput = document.getElementById('idInput').value.trim();
-    const idsWithNumbersAndX = idInput.split('\n').filter(Boolean);
-    const ids = idsWithNumbersAndX.map(id => id.replace(/^\d+x/, ''));
-    fetch('results/card_data.csv')
-        .then(response => response.text())
-        .then(data => {
-            const rows = data.split('\n');
-            const idToName = {};
-            const idToType = {};
-            rows.forEach(row => {
-                const columns = row.split('|');
-                if (columns.length > 2) {
-                    const id = columns[0].trim();
-                    const name = columns[1].trim();
-                    const cardType = columns[3].trim();
-                    idToName[id] = name;
-                    idToType[id] = cardType;
-                }
-            });
-            let tableData = [
-                ["QTY", "Card ID", "Card Type", "Card Name"],
-            ]
+  const idInput = document.getElementById('idInput').value.trim();
+  const idsWithCounts = idInput.split('\n').filter(Boolean);
+  const ids = idsWithCounts.map(line => line.replace(/^\d+x/, '').trim());
 
-            let tableLeaderData = [
-                ["Card ID", "Card Name"],
-            ]            
-            
-            idsWithNumbersAndX.forEach(entry => {
-                const [count, idRaw] = entry.split('x');
-                const id = idRaw.trim();
-                const name = idToName[id] || "Not Found";
-                const cardType = idToType[id].toLowerCase() || "-";
-                if (cardType == "leader"){
-                    tableLeaderData.push([id, name]);
-                }else{
-                    tableData.push([count.trim(), id, cardType, name]);
-                }
-            });
+  fetch('results/card_data.csv')
+    .then(response => response.text())
+    .then(csv => {
+      const idToName = {}, idToType = {};
+      csv.split('\n').forEach(row => {
+        const [id, name,, type] = row.split('|').map(s => s?.trim());
+        if (id && name && type) {
+          idToName[id] = name;
+          idToType[id] = type.toLowerCase();
+        }
+      });
 
-            generateTable("table-container", tableData, tableLeaderData);
+      const mainTable = [["QTY", "Card ID", "Card Type", "Card Name"]];
+      const leaderTable = [["Card ID", "Card Name"]];
 
-        })
-        .catch(error => console.error('Error:', error));        
+      idsWithCounts.forEach(entry => {
+        const [count, idRaw] = entry.split('x');
+        const id = idRaw.trim();
+        const name = idToName[id] || "Not Found";
+        const type = idToType[id] || "-";
+
+        if (type === "leader") {
+          leaderTable.push([id, name]);
+        } else {
+          mainTable.push([count.trim(), id, type, name]);
+        }
+      });
+
+      renderTables(container, mainTable, leaderTable);
+    })
+    .catch(error => console.error('Error:', error));
 }
 
-function generateTable(containerId, tableData, tableLeaderData) {
-    const playerName = document.getElementById("nameInput").value.trim();
-    const container = document.getElementById(containerId);
-    const table = document.createElement("table");
-    const leaderTable = document.createElement("table")
-    const playerLabel = document.createElement("label")
-    playerLabel.textContent  = `Player: ${playerName || "Unknown"}`;
+function renderTables(container, mainData, leaderData) {
+  const playerName = document.getElementById("nameInput").value.trim();
+  container.innerHTML = "";
 
-    leaderTable.setAttribute("id", "table-leader");
-    table.setAttribute("id", "table-deck")
+  const playerLabel = document.createElement("h5");
+  playerLabel.textContent = `Player: ${playerName || "Unknown"}`;
+  container.appendChild(playerLabel);
 
-    tableLeaderData.forEach((rowData, index) => {
-    const row = leaderTable.insertRow();
-    rowData.forEach(cellData => {
-        const cell = index === 0 ? document.createElement("th") : document.createElement("td");
-        cell.textContent = cellData;
-        row.appendChild(cell);
-    });
-    });
+  if (leaderData.length > 1) container.appendChild(createTable("table-leader", leaderData));
+  if (mainData.length > 1) container.appendChild(createTable("table-deck", mainData));
+}
 
-    tableData.forEach((rowData, index) => {
+function createTable(id, data) {
+  const table = document.createElement("table");
+  table.id = id;
+  data.forEach((rowData, i) => {
     const row = table.insertRow();
     rowData.forEach(cellData => {
-        const cell = index === 0 ? document.createElement("th") : document.createElement("td");
-        cell.textContent = cellData;
-        row.appendChild(cell);
+      const cell = document.createElement(i === 0 ? "th" : "td");
+      cell.textContent = cellData;
+      row.appendChild(cell);
     });
-    });
-
-    const newLine = document.createElement("br")
-    container.appendChild(playerLabel);
-    container.appendChild(leaderTable);
-    container.appendChild(newLine);
-    container.appendChild(table);
+  });
+  return table;
 }
 
-// Function to print only the table
 function printTable() {
-    const tableHTML = document.getElementById("table-deck").outerHTML;
-    const tableHTMLLeader = document.getElementById("table-leader").outerHTML;
-    const newWin = window.open("", "", "width=800,height=600");
-    const playerName = document.getElementById("nameInput").value.trim();
+  const playerName = document.getElementById("nameInput").value.trim();
+  const deckTable = document.getElementById("table-deck")?.outerHTML || "";
+  const leaderTable = document.getElementById("table-leader")?.outerHTML || "";
 
-    newWin.document.write(`
+  const win = window.open("", "", "width=800,height=600");
+  win.document.write(`
     <html>
-        <head>
-        <title>OP TCG</title>
+      <head>
+        <title>Deck Printout</title>
         <style>
-            table {
-            width: 100%;
-            border-collapse: collapse;
-            }
-            th, td {
-            border: 1px solid #333;
-            padding: 8px;
-            text-align: center;
-            }
-            th {
-            background-color: #f2f2f2;
-            }
+          body { font-family: Arial, sans-serif; padding: 20px; }
+          table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+          th, td { border: 1px solid #333; padding: 8px; text-align: center; }
+          th { background-color: #f2f2f2; }
         </style>
-        </head>
-        <body onload="window.print(); window.close();">
-            <h1>One Piece Deck Registration Sheet</h1>
-            <h2>Player Name: ${playerName || "Unknown"}</h2>
-        ${tableHTMLLeader}
-        <br/>
-        ${tableHTML}
-        </body>
+      </head>
+      <body onload="window.print(); window.close();">
+        <h1>One Piece Deck Registration Sheet</h1>
+        <h2>Player: ${playerName || "Unknown"}</h2>
+        ${leaderTable}
+        ${deckTable}
+      </body>
     </html>
-    `);
-    newWin.document.close();
+  `);
+  win.document.close();
 }
 
-// Generate the table on page load
-
-// Attach print event
 document.getElementById("printBtn").addEventListener("click", printTable);
-
-function copyToClipboard() {
-    const outputField = document.getElementById('output');
-    const range = document.createRange();
-    range.selectNode(outputField);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand('copy');
-    window.getSelection().removeAllRanges();
-    document.getElementById('copyMessage').innerText = 'Copied!';
-}
 </script>
 </body>
 </html>
