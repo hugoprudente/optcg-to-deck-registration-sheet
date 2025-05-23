@@ -114,20 +114,38 @@ function renderTables(container, mainData, leaderData) {
 function createTable(id, data) {
   const table = document.createElement("table");
   table.id = id;
+
+  // Create a header row for the table title
+  const titleRow = table.insertRow();
+  const titleCell = document.createElement("th");
+  titleCell.colSpan = data[0].length;
+  titleCell.textContent = id === "table-leader" ? "Leader Card" : "Main Deck";
+  titleCell.style.backgroundColor = "#d3d3d3"; // light gray
+  titleCell.style.textAlign = "center";
+  titleCell.style.fontSize = "1.1em";
+  titleCell.style.fontWeight = "bold";
+  titleRow.appendChild(titleCell);
+
+  // Create the rest of the table
   data.forEach((rowData, i) => {
     const row = table.insertRow();
     rowData.forEach((cellData, colIndex) => {
-    const cell = i === 0 ? document.createElement("th") : document.createElement("td");
-    cell.textContent = cellData;
+      const cell = i === 0 ? document.createElement("th") : document.createElement("td");
+      cell.textContent = cellData;
 
-    // Left-align the "Card Name" column (index 3 in mainTable)
-    if (colIndex === 3 && i !== 0) {
+      if (i === 0) {
+        cell.style.backgroundColor = "#f2f2f2"; // light gray for headers
+      }
+
+      // Left-align the "Card Name" column (index 3 in mainTable)
+      if (colIndex === 3 && i !== 0) {
         cell.style.textAlign = "left";
-    }
+      }
 
-    row.appendChild(cell);
-});
+      row.appendChild(cell);
+    });
   });
+
   return table;
 }
 
