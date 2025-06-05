@@ -4,6 +4,10 @@ This project is a tool for One Piece TCG players who want a simple, no-login sol
 
 It was heavily inspired by [seitrox's sim2cardmarket converter](https://seitrox.github.io/optcg-sim2cardmarket-converter/), a fantastic open-source project that laid the foundation for this one. You should definitely check it out—and if you find either project helpful, consider donating over there to support the work!
 
+## Try It Out
+
+* [https://hugoprudente.github.io/optcg-to-deck-registration-sheet/](https://hugoprudente.github.io/optcg-to-deck-registration-sheet/)
+
 ---
 
 ## What's in this repo?
