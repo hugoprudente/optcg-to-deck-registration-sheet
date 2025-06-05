@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 from data.ProductSeries import ProductSeries
-from config import BASE_URL, RAW_DATA_DIR, CARD_LIST_URL, RESULTS_DIR
+from config import RAW_DATA_DIR, RESULTS_DIR
 from data.Card import Card
 
 
@@ -15,7 +15,8 @@ def get_product_series(url: str):
     products = []
 
     try:
-        response = requests.post(url, data=request_data)
+        full_url = urljoin(url, "/cardlist/")
+        response = requests.post(full_url, data=request_data, verify=False)
         if response.status_code == 200:
             print("POST request successful!")
             soup = BeautifulSoup(response.text, 'html.parser')
@@ -40,12 +41,11 @@ def get_product_series(url: str):
 
     return products
 
-def fetch_product_series_data(product_series: ProductSeries):
+def fetch_product_series_data(product_series: ProductSeries, base_url: str):
     request_data = {"series": product_series.id}
     filename = RAW_DATA_DIR / f"{product_series.id}.txt"
     timestamp_file = RAW_DATA_DIR / f"{product_series.id}_timestamp.txt"
 
-    # Check if the timestamp file exists and its content
     if timestamp_file.exists():
         with open(timestamp_file, "r") as tf:
             last_updated = datetime.fromisoformat(tf.read())
@@ -54,27 +54,20 @@ def fetch_product_series_data(product_series: ProductSeries):
                 return None
 
     try:
-        response = requests.post(CARD_LIST_URL, data=request_data)
+        full_url = urljoin(base_url, "/cardlist/")
+        response = requests.post(full_url, data=request_data, verify=False)
         if response.status_code == 200:
-            print(f"POST request successful for series id: {product_series.id}")
             RAW_DATA_DIR.mkdir(exist_ok=True)
-
-            # Write response to file
             with open(filename, "w", encoding="utf-8") as file:
                 file.write(response.text)
-            print(f"Response written to {filename}")
-
-            # Write current timestamp to timestamp file
             with open(timestamp_file, "w") as tf:
                 tf.write(datetime.now().isoformat())
-
-            print(f"Timestamp updated for series id: {product_series.id}")
         else:
-            print(f"POST request failed with status code {response.status_code} for series id: {product_series.id}")
+            print(f"POST failed for {product_series.id} from {base_url}")
     except Exception as e:
-        print(f"An error occurred for series id {product_series.id}: {str(e)}")
+        print(f"Error fetching {product_series.id} from {base_url}: {e}")
 
-def extract_card_data(html_content: str, product: ProductSeries) -> List[Card]:
+def extract_card_data(html_content: str, product: ProductSeries, base_url: str) -> List[Card]:
     soup = BeautifulSoup(html_content, "html.parser")
     cards = []
 
@@ -135,7 +128,7 @@ def extract_card_data(html_content: str, product: ProductSeries) -> List[Card]:
             image_src = image["data-src"]
             if image_src.startswith(".."):
                 image_src = image_src[2:]  # Remove the '..' from the beginning of the URL
-            image_url = urljoin(BASE_URL, image_src)
+            image_url = urljoin(base_url, image_src)
             card_data.image_url = image_url
 
             # Determine if it's alternate art
@@ -147,15 +140,15 @@ def extract_card_data(html_content: str, product: ProductSeries) -> List[Card]:
         cards.append(card_data)
     return cards
 
-def get_all_cards_data(product_series):
+def get_all_cards_data(product_series, base_url="https://en.onepiece-cardgame.com"):
     all_cards_data = []
     for product in product_series:
-        fetch_product_series_data(product)
-        product_series_file = RAW_DATA_DIR / f"{product.id}.txt"
-        if product_series_file:
-            with open(product_series_file, "r", encoding="utf-8") as file:
+        fetch_product_series_data(product, base_url)
+        file_path = RAW_DATA_DIR / f"{product.id}.txt"
+        if file_path.exists():
+            with open(file_path, "r", encoding="utf-8") as file:
                 html_content = file.read()
-                cards_data = extract_card_data(html_content, product)
+                cards_data = extract_card_data(html_content, product, base_url)
                 all_cards_data.extend(cards_data)
     return all_cards_data
 
@@ -227,8 +220,20 @@ def write_formated_cards_data_to_csv(cards_data: List[Card]):
 
 
 def main():
-    product_series = get_product_series(CARD_LIST_URL)
-    all_cards_data = get_all_cards_data(product_series)
+    urls = [
+        "https://en.onepiece-cardgame.com",          # Region-specific
+        "https://asia-en.onepiece-cardgame.com"      # Generic site
+    ]
+
+    all_product_series = []
+    for url in urls:
+        product_series = get_product_series(url)
+        all_product_series.extend(product_series)
+
+    # Deduplicate based on series ID (assuming ID is unique)
+    unique_series = {p.id: p for p in all_product_series}.values()
+
+    all_cards_data = get_all_cards_data(unique_series)
     RESULTS_DIR.mkdir(exist_ok=True)
     write_cards_data_to_csv(all_cards_data)
 
@@ -236,8 +241,6 @@ def main():
     output_csv = RESULTS_DIR / "converter_card_data.csv"
     write_converter_csv(str(input_csv), str(output_csv))
     write_formated_cards_data_to_csv(all_cards_data)
-
-
 
 
 if __name__ == "__main__":

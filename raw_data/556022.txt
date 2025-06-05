@@ -309,6 +309,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <option value="556301" >PREMIUM BOOSTER &lt;br class=&quot;spInline&quot;&gt;-ONE PIECE CARD THE BEST- [PRB-01]</option>
                   <option value="556202" >EXTRA BOOSTER &lt;br class=&quot;spInline&quot;&gt;-Anime 25th collection- [EB-02]</option>
                   <option value="556201" >EXTRA BOOSTER &lt;br class=&quot;spInline&quot;&gt;-Memorial Collection- [EB-01]</option>
+                  <option value="556112" >BOOSTER PACK &lt;br class=&quot;spInline&quot;&gt;-Legacy of the Master- [OP-12]</option>
                   <option value="556111" >BOOSTER PACK &lt;br class=&quot;spInline&quot;&gt;-A Fist of Divine Speed- [OP-11]</option>
                   <option value="556110" >BOOSTER PACK -Royal Blood- [OP-10]</option>
                   <option value="556109" >BOOSTER PACK &lt;br class=&quot;spInline&quot;&gt;-Emperors in the New World- [OP-09]</option>
@@ -1766,7 +1767,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
                       </div>
         <p class="mtL">
-          <a class="commonBtn isIcoDL" href="/pdf/don-cardlist.pdf?v=250328" target="_blank"><span>DON!! Card List</span></a>
+          <a class="commonBtn isIcoDL" href="/pdf/don-cardlist.pdf?v=250530" target="_blank"><span>DON!! Card List</span></a>
         </p>
       </div>
     
