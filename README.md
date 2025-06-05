@@ -1,43 +1,65 @@
-# OPTCG sim2cardmarket converter
+# One Piece TCG Deck Registration
 
-This repository contains 2 parts
-* the scraper to get the card data
-* a smal website that allows to convert from sim format to cardmarket format
+This project is a tool for One Piece TCG players who want a simple, no-login solution to register their decks, convert formats, and print them in a clean and readable format.
 
-to use head over to [https://seitrox.github.io/optcg-sim2cardmarket-converter/](https://seitrox.github.io/optcg-sim2cardmarket-converter/)
+It was heavily inspired by [seitrox's sim2cardmarket converter](https://seitrox.github.io/optcg-sim2cardmarket-converter/), a fantastic open-source project that laid the foundation for this one. You should definitely check it out—and if you find either project helpful, consider donating over there to support the work!
 
-## the scraper
+---
 
-This scraper automatically scrapes https://en.onepiece-cardgame.com/cardlist in order to get all currently available cards.
-output of the scraper should be 3 files.  
-1x nicely formatted txt file with pretty much all the data on the cards.  
-1x the same file but in csv.  
-1x a condensed version of the csv, only using the id and the cardname, also filtering out duplicates(alternate art cards)  
+## What's in this repo?
 
-This scraper saves the HTML of the individual sets (like op01,op02 etc) and only redownloads them if some time has passed (1 hour), can be changed in code.  
+This repository includes two main components:
 
-### Prerequesits
+- 🔎 A scraper that pulls card data from official One Piece TCG sources
+- 🌐 A lightweight frontend to register, display, and print decks from `.txt` format (sim/export format)
 
-* python 3  
-* pip
+---
 
-### How to use 
+## Features
 
-first create a venv
+✅ **Uppercase and lowercase card search**
+Search for cards easily without worrying about capitalization.
+
+✅ **Dual card list support**
+Includes both **en** (English) and **asian-en** card lists—merged and filtered for duplicates.
+
+✅ **Card stats link**
+Click on a card to view its stats and rulings on **[gumgum.gg](https://gumgum.gg)**.
+
+✅ **Printable output**
+Clean, formatted deck display with a **"Print / Save as PDF"** button—works if you have compatible print drivers installed.
+
+---
+
+## How to Use the Scraper
+
+The scraper fetches cards from [https://en.onepiece-cardgame.com/cardlist](https://en.onepiece-cardgame.com/cardlist) and [https://asia-en.onepiece-cardgame.com/cardlist](https://asia-en.onepiece-cardgame.com/cardlist), processes the data, and exports:
+
+- A well-formatted `.txt` file with full card info
+- A detailed `.csv` version
+- A condensed `.csv` version with only card IDs and names (no alts)
+
+The scraper caches HTML files of each set (e.g., OP01, OP02) to avoid redownloading unnecessarily (1-hour cache timeout, configurable).
+
+### Prerequisites
+
+- Python 3  
+- pip
+
+### Setup
 
 ```bash
+# Create and activate a virtual environment
 python -m venv venv
-```
-
-Activate the venv and then install the needed packages from requirements.txt
-```bash
 source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
-```
 
-once this is done sucesfully, just run `scraper.py` 
-```bash
-python scraper.py
-```
+# Run the scraper
 
-if the scraper ran without any further issues, you should now have a `results` folder with the 3 files
+python src/scraper.py
+
+## Contributions
+
+Let me know if you’d like this version saved as a file or need a version that includes screenshots, badges, or deployment instructions.
