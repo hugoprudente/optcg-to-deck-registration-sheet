@@ -56,6 +56,8 @@ source venv/bin/activate
 # Install dependencies
 pip install -r requirements.txt
 
+```
+
 # Run the scraper
 
 python src/scraper.py
