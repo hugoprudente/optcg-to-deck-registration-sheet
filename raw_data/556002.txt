@@ -142,21 +142,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="alternate" hreflang="en-gr" href="https://en.onepiece-cardgame.com/">
   <link rel="alternate" hreflang="en-pt" href="https://en.onepiece-cardgame.com/">
   <link rel="stylesheet" href="/css/lib/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/css/layout.css?250829">
+  <link rel="stylesheet" href="/css/layout.css?250912">
   <script src="/js/lib/jquery.min.js?v=3.6.0"></script>
   <script src="/js/lib/jquery.easing.1.4.min.js"></script>
   <script src="/js/lib/jquery.fancybox.min.js"></script>
   <script src="/js/lib/lazyload.min.js"></script>
-  <script src="/js/common.js?250829"></script>
-  <link rel="stylesheet" href="/css/layout_en.css?250829">
-  <script src="/js/common_en.js?250829"></script>
-  <link rel="stylesheet" href="/css/cardlist.css?250829">
-  <script src="/js/cardlist.js?250829"></script>
-  <link rel="stylesheet" href="/css/cardlist_en.css?2508294">
-  <script src="/js/cardlist_en.js?2508294"></script>
+  <script src="/js/common.js?250912"></script>
+  <link rel="stylesheet" href="/css/layout_en.css?250912">
+  <script src="/js/common_en.js?250912"></script>
+  <link rel="stylesheet" href="/css/cardlist.css?250912">
+  <script src="/js/cardlist.js?250912"></script>
+  <link rel="stylesheet" href="/css/cardlist_en.css?2509124">
+  <script src="/js/cardlist_en.js?2509124"></script>
   <link rel="stylesheet" href="../css/lib/jquery.selmodal.css">
-  <script src="../js/modal.js?250829"></script>
-  <script src="../js/pager.js?250829"></script>
+  <script src="../js/modal.js?250912"></script>
+  <script src="../js/pager.js?250912"></script>
   <script src="../js/lib/jquery.selmodal.js"></script>
   <script>
     function Post(obj) {
@@ -235,6 +235,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a class="languageBtn hk" href="https://asia-hk.onepiece-cardgame.com/">繁體中文(HK)<span>Traditional Chinese(HK)</span></a></li>
             <li><a class="languageBtn tw" href="https://asia-tw.onepiece-cardgame.com/">繁體中文(TW)<span>Traditional Chinese(TW)</span></a></li>
             <li><a class="languageBtn th" href="https://asia-th.onepiece-cardgame.com/">ไทย<span>Thai</span></a></li>
+            <li><a class="languageBtn ko" href="https://onepiece-cardgame.kr/" target="_blank" rel="noopener">한국어<span>Korean</span></a></li>
             <li><a class="languageBtn asia-en" href="https://asia-en.onepiece-cardgame.com/">English(Asia)<span>English(Asia)</span></a></li>
             <li><a class="languageBtn en current" href="https://en.onepiece-cardgame.com/">English<br class="spInline">(US/Europe/LatAm/Oceania)<span>English<br class="spInline">(US/Europe/LatAm/Oceania)</span></a></li>
             <li><a class="languageBtn fr" href="https://fr.onepiece-cardgame.com/">Français<span>French</span></a></li>
