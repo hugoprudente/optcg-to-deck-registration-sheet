@@ -142,21 +142,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="alternate" hreflang="en-gr" href="https://en.onepiece-cardgame.com/">
   <link rel="alternate" hreflang="en-pt" href="https://en.onepiece-cardgame.com/">
   <link rel="stylesheet" href="/css/lib/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/css/layout.css?250925">
+  <link rel="stylesheet" href="/css/layout.css?251001">
   <script src="/js/lib/jquery.min.js?v=3.6.0"></script>
   <script src="/js/lib/jquery.easing.1.4.min.js"></script>
   <script src="/js/lib/jquery.fancybox.min.js"></script>
   <script src="/js/lib/lazyload.min.js"></script>
-  <script src="/js/common.js?250925"></script>
-  <link rel="stylesheet" href="/css/layout_en.css?250925">
-  <script src="/js/common_en.js?250925"></script>
-  <link rel="stylesheet" href="/css/cardlist.css?250925">
-  <script src="/js/cardlist.js?250925"></script>
-  <link rel="stylesheet" href="/css/cardlist_en.css?2509254">
-  <script src="/js/cardlist_en.js?2509254"></script>
+  <script src="/js/common.js?251001"></script>
+  <link rel="stylesheet" href="/css/layout_en.css?251001">
+  <script src="/js/common_en.js?251001"></script>
+  <link rel="stylesheet" href="/css/cardlist.css?251001">
+  <script src="/js/cardlist.js?251001"></script>
+  <link rel="stylesheet" href="/css/cardlist_en.css?2510014">
+  <script src="/js/cardlist_en.js?2510014"></script>
   <link rel="stylesheet" href="../css/lib/jquery.selmodal.css">
-  <script src="../js/modal.js?250925"></script>
-  <script src="../js/pager.js?250925"></script>
+  <script src="../js/modal.js?251001"></script>
+  <script src="../js/pager.js?251001"></script>
   <script src="../js/lib/jquery.selmodal.js"></script>
   <script>
     function Post(obj) {
