@@ -15,7 +15,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KKN2G96');</script>
 <!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
-<script async src=""https://www.googletagmanager.com/gtag/js?id=AW-16809493572""></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16809493572"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -151,15 +151,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="alternate" hreflang="en-gr" href="https://en.onepiece-cardgame.com/">
   <link rel="alternate" hreflang="en-pt" href="https://en.onepiece-cardgame.com/">
   <link rel="stylesheet" href="/renewal/css/lib/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/css/layout.css?251017">
+  <link rel="stylesheet" href="/css/layout.css?251030">
   <script src="/renewal/js/lib/jquery.min.js?v=3.7.1"></script>
   <script src="/js/lib/jquery.easing.1.4.min.js"></script>
   <script src="/renewal/js/lib/jquery.fancybox.min.js"></script>
   <script src="/renewal/js/lib/lazyload.min.js"></script>
-  <script src="/js/common_re.js?251017"></script>
-  <link rel="stylesheet" href="/css/layout_en_re.css?251017">
-  <script src="/renewal/js/common.js?251017"></script>
-  <link rel="stylesheet" href="/renewal/css/common_overwrite.css?251017">
+  <script src="/js/common_re.js?251030"></script>
+  <link rel="stylesheet" href="/css/layout_en_re.css?251030">
+  <script src="/renewal/js/common.js?251030"></script>
+  <link rel="stylesheet" href="/renewal/css/common_overwrite.css?251030">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -173,9 +173,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1337111201142759');
 fbq('track', 'PageView');
 </script>
-<noscript><img height=""1"" width=""1"" style=""display:none""
-src=""https://www.facebook.com/tr?id=1337111201142759&ev=PageView&noscript=1""
-/></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1337111201142759&ev=PageView&noscript=1" /></noscript>
 <!-- End Meta Pixel Code -->
 <!-- Twitter conversion tracking base code -->
 <script>
@@ -185,13 +183,13 @@ a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,
 twq('config','qk7bi');
 </script>
 <!-- End Twitter conversion tracking base code -->
-  <link rel="stylesheet" href="/css/cardlist.css?251017">
-  <script src="/js/cardlist.js?251017"></script>
-  <link rel="stylesheet" href="/css/cardlist_en.css?2510175">
-  <script src="/js/cardlist_en.js?2510174"></script>
+  <link rel="stylesheet" href="/css/cardlist.css?251030">
+  <script src="/js/cardlist.js?251030"></script>
+  <link rel="stylesheet" href="/css/cardlist_en.css?2510305">
+  <script src="/js/cardlist_en.js?2510304"></script>
   <link rel="stylesheet" href="../css/lib/jquery.selmodal.css">
-  <script src="../js/modal.js?251017"></script>
-  <script src="../js/pager.js?251017"></script>
+  <script src="../js/modal.js?251030"></script>
+  <script src="../js/pager.js?251030"></script>
   <script src="../js/lib/jquery.selmodal.js"></script>
   <script>
     function Post(obj) {
