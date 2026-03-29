@@ -142,22 +142,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="alternate" hreflang="en-gr" href="https://en.onepiece-cardgame.com/">
   <link rel="alternate" hreflang="en-pt" href="https://en.onepiece-cardgame.com/">
   <link rel="stylesheet" href="/renewal/css/lib/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/css/layout.css?260325">
+  <link rel="stylesheet" href="/css/layout.css?260327">
   <script src="/renewal/js/lib/jquery.min.js?v=3.7.1"></script>
   <script src="/js/lib/jquery.easing.1.4.min.js"></script>
   <script src="/renewal/js/lib/jquery.fancybox.min.js"></script>
   <script src="/renewal/js/lib/lazyload.min.js"></script>
-  <script src="/js/common_re.js?260325"></script>
-  <link rel="stylesheet" href="/css/layout_en_re.css?260325">
-  <script src="/renewal/js/common.js?260325"></script>
-  <link rel="stylesheet" href="/renewal/css/common_overwrite.css?260325">
-  <link rel="stylesheet" href="/css/cardlist.css?260325">
-  <script src="/js/cardlist.js?260325"></script>
-  <link rel="stylesheet" href="/css/cardlist_en.css?2603255">
-  <script src="/js/cardlist_en.js?2603254"></script>
+  <script src="/js/common_re.js?260327"></script>
+  <link rel="stylesheet" href="/css/layout_en_re.css?260327">
+  <script src="/renewal/js/common.js?260327"></script>
+  <link rel="stylesheet" href="/renewal/css/common_overwrite.css?260327">
+  <link rel="stylesheet" href="/css/cardlist.css?260327">
+  <script src="/js/cardlist.js?260327"></script>
+  <link rel="stylesheet" href="/css/cardlist_en.css?2603275">
+  <script src="/js/cardlist_en.js?2603274"></script>
   <link rel="stylesheet" href="../css/lib/jquery.selmodal.css">
-  <script src="../js/modal.js?260325"></script>
-  <script src="../js/pager.js?260325"></script>
+  <script src="../js/modal.js?260327"></script>
+  <script src="../js/pager.js?260327"></script>
   <script src="../js/lib/jquery.selmodal.js"></script>
   <script>
     function Post(obj) {
@@ -326,7 +326,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="gnBottomCol">
           <div class="languageCol uniweb-translation-mask">
-  <button class="languageColBtn"><span>English</span><span> - NA<span>/</span>EU<span>/</span>OC<span>/</span>LA</span></button>
+  <button class="languageColBtn"><span>English</span><span> - NA<span>/</span>EU<span>/</span>OC<span>/</span>LATAM<span>/</span>ME</span></button>
   <div class="languageList js-scroll-wrapper">
     <div class="languageListWrapper">
       <div class="js-scroll-content">
@@ -337,7 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li class="languageListItem"><a href="https://asia-th.onepiece-cardgame.com/" class="languageListLink th">ไทย<span>Thai</span></a></li>
           <li class="languageListItem"><a href="https://onepiece-cardgame.kr/" class="languageListLink kr">한국어<span>Korean</span></a></li>
           <li class="languageListItem"><a href="https://asia-en.onepiece-cardgame.com/" class="languageListLink">English(Asia)<span>English(Asia)</span></a></li>
-          <li class="languageListItem current"><a href="https://en.onepiece-cardgame.com/" class="languageListLink">English(US/Europe/LatAm/Oceania)<span>English(US/Europe/LatAm/Oceania)</span></a></li>
+          <li class="languageListItem current"><a href="https://en.onepiece-cardgame.com/" class="languageListLink">English(NA/EU/OC/LATAM/ME)<span>English(NA/EU/OC/LATAM/ME)</span></a></li>
           <li class="languageListItem"><a href="https://fr.onepiece-cardgame.com/" class="languageListLink">Français<span>French</span></a></li>
         </ul>
       </div>
@@ -589,7 +589,7 @@ Please check the search conditions.        </div>
       </ul>
 </div>
     <div class="languageCol uniweb-translation-mask">
-  <button class="languageColBtn"><span>English</span><span> - NA<span>/</span>EU<span>/</span>OC<span>/</span>LA</span></button>
+  <button class="languageColBtn"><span>English</span><span> - NA<span>/</span>EU<span>/</span>OC<span>/</span>LATAM<span>/</span>ME</span></button>
   <div class="languageList js-scroll-wrapper">
     <div class="languageListWrapper">
       <div class="js-scroll-content">
@@ -600,7 +600,7 @@ Please check the search conditions.        </div>
           <li class="languageListItem"><a href="https://asia-th.onepiece-cardgame.com/" class="languageListLink th">ไทย<span>Thai</span></a></li>
           <li class="languageListItem"><a href="https://onepiece-cardgame.kr/" class="languageListLink kr">한국어<span>Korean</span></a></li>
           <li class="languageListItem"><a href="https://asia-en.onepiece-cardgame.com/" class="languageListLink">English(Asia)<span>English(Asia)</span></a></li>
-          <li class="languageListItem current"><a href="https://en.onepiece-cardgame.com/" class="languageListLink">English(US/Europe/LatAm/Oceania)<span>English(US/Europe/LatAm/Oceania)</span></a></li>
+          <li class="languageListItem current"><a href="https://en.onepiece-cardgame.com/" class="languageListLink">English(NA/EU/OC/LATAM/ME)<span>English(NA/EU/OC/LATAM/ME)</span></a></li>
           <li class="languageListItem"><a href="https://fr.onepiece-cardgame.com/" class="languageListLink">Français<span>French</span></a></li>
         </ul>
       </div>
