@@ -142,22 +142,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="alternate" hreflang="en-gr" href="https://en.onepiece-cardgame.com/">
   <link rel="alternate" hreflang="en-pt" href="https://en.onepiece-cardgame.com/">
   <link rel="stylesheet" href="/renewal/css/lib/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/css/layout.css?260529">
+  <link rel="stylesheet" href="/css/layout.css?260616">
   <script src="/renewal/js/lib/jquery.min.js?v=3.7.1"></script>
   <script src="/js/lib/jquery.easing.1.4.min.js"></script>
   <script src="/renewal/js/lib/jquery.fancybox.min.js"></script>
   <script src="/renewal/js/lib/lazyload.min.js"></script>
-  <script src="/js/common_re.js?260529"></script>
-  <link rel="stylesheet" href="/css/layout_en_re.css?260529">
-  <script src="/renewal/js/common.js?260529"></script>
-  <link rel="stylesheet" href="/renewal/css/common_overwrite.css?260529">
-  <link rel="stylesheet" href="/css/cardlist.css?260529">
-  <script src="/js/cardlist.js?260529"></script>
-  <link rel="stylesheet" href="/css/cardlist_en.css?2605295">
-  <script src="/js/cardlist_en.js?2605294"></script>
+  <script src="/js/common_re.js?260616"></script>
+  <link rel="stylesheet" href="/css/layout_en_re.css?260616">
+  <script src="/renewal/js/common.js?260616"></script>
+  <link rel="stylesheet" href="/renewal/css/common_overwrite.css?260616">
+  <link rel="stylesheet" href="/css/cardlist.css?260616">
+  <script src="/js/cardlist.js?260616"></script>
+  <link rel="stylesheet" href="/css/cardlist_en.css?2606165">
+  <script src="/js/cardlist_en.js?2606164"></script>
   <link rel="stylesheet" href="../css/lib/jquery.selmodal.css">
-  <script src="../js/modal.js?260529"></script>
-  <script src="../js/pager.js?260529"></script>
+  <script src="../js/modal.js?260616"></script>
+  <script src="../js/pager.js?260616"></script>
   <script src="../js/lib/jquery.selmodal.js"></script>
   <script>
     function Post(obj) {
