@@ -142,22 +142,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="alternate" hreflang="en-gr" href="https://en.onepiece-cardgame.com/">
   <link rel="alternate" hreflang="en-pt" href="https://en.onepiece-cardgame.com/">
   <link rel="stylesheet" href="/renewal/css/lib/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/css/layout.css?260801">
+  <link rel="stylesheet" href="/css/layout.css?260806">
   <script src="/renewal/js/lib/jquery.min.js?v=3.7.1"></script>
   <script src="/js/lib/jquery.easing.1.4.min.js"></script>
   <script src="/renewal/js/lib/jquery.fancybox.min.js"></script>
   <script src="/renewal/js/lib/lazyload.min.js"></script>
-  <script src="/js/common_re.js?260801"></script>
-  <link rel="stylesheet" href="/css/layout_en_re.css?260801">
-  <script src="/renewal/js/common.js?260801"></script>
-  <link rel="stylesheet" href="/renewal/css/common_overwrite.css?260801">
-  <link rel="stylesheet" href="/css/cardlist.css?260801">
-  <script src="/js/cardlist.js?260801"></script>
-  <link rel="stylesheet" href="/css/cardlist_en.css?2608015">
-  <script src="/js/cardlist_en.js?2608014"></script>
+  <script src="/js/common_re.js?260806"></script>
+  <link rel="stylesheet" href="/css/layout_en_re.css?260806">
+  <script src="/renewal/js/common.js?260806"></script>
+  <link rel="stylesheet" href="/renewal/css/common_overwrite.css?260806">
+  <link rel="stylesheet" href="/css/cardlist.css?260806">
+  <script src="/js/cardlist.js?260806"></script>
+  <link rel="stylesheet" href="/css/cardlist_en.css?2608065">
+  <script src="/js/cardlist_en.js?2608064"></script>
   <link rel="stylesheet" href="../css/lib/jquery.selmodal.css">
-  <script src="../js/modal.js?260801"></script>
-  <script src="../js/pager.js?260801"></script>
+  <script src="../js/modal.js?260806"></script>
+  <script src="../js/pager.js?260806"></script>
   <script src="../js/lib/jquery.selmodal.js"></script>
   <script>
     function Post(obj) {
@@ -202,14 +202,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul class="menuColList">
           <li class="menuColListItem">
             <a class="menuColListLink" href="/beginners/">
-              <span class="menuColListLinkTit">START HERE</span>
-              <span class="menuColListLinkTxt">Learn about the ONE PIECE CARD GAME</span>
+              <span class="menuColListLinkTit">FOR BEGINNERS</span>
+              <span class="menuColListLinkTxt">New to TCGs? Start Here.</span>
             </a>
           </li>
           <li class="menuColListItem">
-            <a class="menuColListLink" href="/beginners/how-to-play.php">
-              <span class="menuColListLinkTit">PLAY A GAME</span>
-              <span class="menuColListLinkTxt">Play a game and learn the rules</span>
+            <a class="menuColListLink" href="/experienced-tcg-players/">
+              <span class="menuColListLinkTit">FOR EXPERIENCED TCG PLAYERS</span>
+              <span class="menuColListLinkTxt">Familiar Rules. Endless Possibilities.</span>
             </a>
           </li>
         </ul>
@@ -231,6 +231,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a class="menuColListLink" href="/play-guide/">
               <span class="menuColListLinkTit">PLAY GUIDE</span>
               <span class="menuColListLinkTxt">Keep this handy while you play!</span>
+            </a>
+          </li>
+          <li class="menuColListItem">
+            <a class="menuColListLink" href="/beginners/how-to-play.php">
+              <span class="menuColListLinkTit">HOW TO PLAY</span>
+              <span class="menuColListLinkTxt">Play a game and learn the rules</span>
             </a>
           </li>
         </ul>
@@ -638,14 +644,14 @@ Please check the search conditions.        </div>
         <ul class="menuColList">
           <li class="menuColListItem">
             <a class="menuColListLink" href="/beginners/">
-              <span class="menuColListLinkTit">START HERE</span>
-              <span class="menuColListLinkTxt">Learn about the ONE PIECE CARD GAME</span>
+              <span class="menuColListLinkTit">FOR BEGINNERS</span>
+              <span class="menuColListLinkTxt">New to TCGs? Start Here.</span>
             </a>
           </li>
           <li class="menuColListItem">
-            <a class="menuColListLink" href="/beginners/how-to-play.php">
-              <span class="menuColListLinkTit">PLAY A GAME</span>
-              <span class="menuColListLinkTxt">Play a game and learn the rules</span>
+            <a class="menuColListLink" href="/experienced-tcg-players/">
+              <span class="menuColListLinkTit">FOR EXPERIENCED TCG PLAYERS</span>
+              <span class="menuColListLinkTxt">Familiar Rules. Endless Possibilities.</span>
             </a>
           </li>
         </ul>
@@ -667,6 +673,12 @@ Please check the search conditions.        </div>
             <a class="menuColListLink" href="/play-guide/">
               <span class="menuColListLinkTit">PLAY GUIDE</span>
               <span class="menuColListLinkTxt">Keep this handy while you play!</span>
+            </a>
+          </li>
+          <li class="menuColListItem">
+            <a class="menuColListLink" href="/beginners/how-to-play.php">
+              <span class="menuColListLinkTit">HOW TO PLAY</span>
+              <span class="menuColListLinkTxt">Play a game and learn the rules</span>
             </a>
           </li>
         </ul>
