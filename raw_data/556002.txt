@@ -142,22 +142,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="alternate" hreflang="en-gr" href="https://en.onepiece-cardgame.com/">
   <link rel="alternate" hreflang="en-pt" href="https://en.onepiece-cardgame.com/">
   <link rel="stylesheet" href="/renewal/css/lib/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/css/layout.css?261007">
+  <link rel="stylesheet" href="/css/layout.css?261016">
   <script src="/renewal/js/lib/jquery.min.js?v=3.7.1"></script>
   <script src="/js/lib/jquery.easing.1.4.min.js"></script>
   <script src="/renewal/js/lib/jquery.fancybox.min.js"></script>
   <script src="/renewal/js/lib/lazyload.min.js"></script>
-  <script src="/js/common_re.js?261007"></script>
-  <link rel="stylesheet" href="/css/layout_en_re.css?261007">
-  <script src="/renewal/js/common.js?261007"></script>
-  <link rel="stylesheet" href="/renewal/css/common_overwrite.css?261007">
-  <link rel="stylesheet" href="/css/cardlist.css?261007">
-  <script src="/js/cardlist.js?261007"></script>
-  <link rel="stylesheet" href="/css/cardlist_en.css?2610075">
-  <script src="/js/cardlist_en.js?2610074"></script>
+  <script src="/js/common_re.js?261016"></script>
+  <link rel="stylesheet" href="/css/layout_en_re.css?261016">
+  <script src="/renewal/js/common.js?261016"></script>
+  <link rel="stylesheet" href="/renewal/css/common_overwrite.css?261016">
+  <link rel="stylesheet" href="/css/cardlist.css?261016">
+  <script src="/js/cardlist.js?261016"></script>
+  <link rel="stylesheet" href="/css/cardlist_en.css?2610165">
+  <script src="/js/cardlist_en.js?2610164"></script>
   <link rel="stylesheet" href="../css/lib/jquery.selmodal.css">
-  <script src="../js/modal.js?261007"></script>
-  <script src="../js/pager.js?261007"></script>
+  <script src="../js/modal.js?261016"></script>
+  <script src="../js/pager.js?261016"></script>
   <script src="../js/lib/jquery.selmodal.js"></script>
   <script>
     function Post(obj) {
@@ -391,6 +391,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <option value>ALL</option>
                   <option value="569302" >PREMIUM BOOSTER &lt;br class=&quot;spInline&quot;&gt;-ONE PIECE CARD THE BEST vol.2- [PRB-02]</option>
                   <option value="569301" >PREMIUM BOOSTER &lt;br class=&quot;spInline&quot;&gt;-ONE PIECE CARD THE BEST- [PRB-01]</option>
+                  <option value="569205" >EXTRA BOOSTER &lt;br class=&quot;spInline&quot;&gt;-ONE PIECE HEROINES EDITION vol.2- [EB-05]</option>
                   <option value="569203" >EXTRA BOOSTER &lt;br class=&quot;spInline&quot;&gt;-ONE PIECE HEROINES EDITION- [EB-03]</option>
                   <option value="569202" >EXTRA BOOSTER &lt;br class=&quot;spInline&quot;&gt;-Anime 25th Collection- [EB-02]</option>
                   <option value="569201" >EXTRA BOOSTER &lt;br class=&quot;spInline&quot;&gt;-MEMORIAL COLLECTION- [EB-01]</option>
